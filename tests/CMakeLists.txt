@@ -29,6 +29,7 @@ include_directories(include)
 add_library(test_functions STATIC
   lib/coincidences.cpp
   lib/generate.cpp)
+target_link_libraries(test_functions generate)
 
 add_executable(test_k40gen
   src/test_coincidences.cpp
