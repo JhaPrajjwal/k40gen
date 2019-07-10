@@ -157,11 +157,11 @@ endif()
 if(ENABLE_PYTHON)
   include(XTensor)
 
+  # Pybind11
+  find_package(pybind11 REQUIRED)
   include(pybind11Tools)
   pybind11_add_module(k40gen "src/k40gen/bindings.cpp")
   target_link_libraries(k40gen PUBLIC generate)
-
-  find_package(pybind11)
   target_include_directories(k40gen PUBLIC ${PYBIND11_INCLUDE_DIRS})
 
   if (xtp_BUILTIN)
